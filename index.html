@@ -5,25 +5,20 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Julian Florez - Frontend dev</title>
-
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
    <link rel="stylesheet" href="style.css">
    <link rel="icon" href="assets/JF_logo(1).png">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Jost&family=Passion+One&family=Poppins&family=Rubik&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
 </head>
 <body>
 
-   <header>
+   <header id="navbar">
       <div id="logo"><img src="assets/JF_logo(1).png" alt=""></div>
       <nav>
 
          <ul class="nav-links">
-            <li><a href="">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="">Skills</a></li>
+            <li><a href="#skills">Skills</a></li>
          </ul>
 
       </nav>   
@@ -33,7 +28,7 @@
 
 <section id="welcome-section">
    <div class="welcome-content">
-      <h1>Hello, my name is <br><span>Julian Florez</span>.</h1>
+      <h1>Hello, my name is <br><span class="name">Julian Florez</span>.</h1>
       <h2>A frontend developer and I'm focused on creating unique, and AmAzInG experiences that help boost your business' growth</h2>
       <a href="contact-me"><button>Contact me</button></a>
    </div>
@@ -48,27 +43,55 @@
    <section id="project-cards">
 
 
-      <figure class="project-card">
+      <figure class="project-card project-tile">
          <a href="#" class="project-card__clickable"></a>
          <img src="https://placeimg.com/200/200/tech" alt="tech" class="prject-card__img">
-         <a class="project-card__code-btn" href="#">Code</a>
-         <a class="project-card__live-btn" href="#">live</a>
+         <a class="project-card__btn project-card__btn--left" href="#">Code</a>
+         <a class="project-card__btn project-card__btn--right" href="#">Live</a>
+
       </figure>
 
-      <figure class="project-card">
-         <a href="#"></a>
+      <figure class="project-card project-tile">
+         <a href="#" class="project-card__clickable"></a>
          <img src="https://placeimg.com/200/200/animals" alt="animals" class="prject-card__img">
-         <figcaption>Animals</figcaption>
+         <a class="project-card__btn project-card__btn--left" href="#">Code</a>
+         <a class="project-card__btn project-card__btn--right" href="#">Live</a>
       </figure>
 
-      <figure class="project-card">
-         <a href="#"></a>
-          <img src="https://placeimg.com/200/200/arch" alt="arch" class="prject-card__img">
-          <figcaption>Arch</figcaption>
+      <figure class="project-card project-tile">
+         <a href="#" class="project-card__clickable"></a>
+         <img src="https://placeimg.com/200/200/arch" alt="arch" class="prject-card__img">
+         <a class="project-card__btn project-card__btn--left" href="#">Code</a>
+         <a class="project-card__btn project-card__btn--right" href="#">Live</a>
       </figure>
 
    </section>
 
+</section>
+
+<section id="skills" class="skills">
+   <h2>Skills</h2>
+   
+   <section>
+
+      <div class="skills__item"><img src="assets/HTML_logo.png" alt="HTML logo"><span>HTML</span></div>
+      <div class="skills__item"><img src="assets/CSS_logo.png" alt="CSS logo"><span>CSS<span></div>
+      <div class="skills__item"><img src="assets/JS_logo.png" alt="JavaScript logo"><span>JavaScript</span></div> 
+      <div class="skills__item"><img src="assets/GIT+GITHUB_logo.png" alt="Git and Github logos"><span>Git/Github</span></div>
+      
+   </section>
+</section>
+
+<section id="contact">
+   <h2>Wanna talk?</h2>
+   <p>Feel free to reach out in any of my social media or by email:</p>
+   <div class="contact-icons">
+      <a href="https://twitter.com/Julianfg77" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://twitter.com/Julianfg77" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://wa.link/v0y5wu" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a id="profile-link" href="https://github.com/juliflorezg" target="_blank"><i class="fab fa-github"></i></a>        
+   </div>
+   <a class ="email" href="mailto:forezjuli08@hotmail.com">forezjuli08@hotmail.com</a>
 </section>
 
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
