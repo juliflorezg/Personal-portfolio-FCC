@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+
 :root{
    --font-size: 2rem;
    --second-font-size: 1.5rem;
    --third-font-size: .8rem;
-   --main-font : 'Lobster';
+   --main-font: 'Barlow', sans-serif;
+   --second-font:  'Poppins', sans-serif; /*'Fredoka One', cursive;*/ /*'Titan One', cursive;*/
    --container-width: 1400px;
-   --main-color: rgb(14, 28, 56,);
+   --main-color: rgb(14, 28, 56);
    --main-color-transparent:rgba(14, 28, 56, 0.98);
    --second-color: rgb(255, 255, 255);
    --main-modal-color: rgba(42, 207, 207, 0.8);
@@ -40,12 +46,12 @@ body{
    flex-direction: column;
    /* background-color: var(--main-color);
    color: var(--second-color); */
-   font-family:'Jost', sans-serif;
+   font-family: inherit;
    margin:0
 }
 
 li, a, button {
-   font-family:'Jost', sans-serif;
+   font-family: var(--main-font);
    font-weight: 400;
    font-size: .6rem;
    color: var(--second-color);
@@ -86,7 +92,8 @@ header{
    padding: 0 20px;
 }
 
-.nav-links li a{
+.nav-links li a,
+#contact a{
    position: relative;
    transition: all 0.3s ease;
 }
@@ -95,22 +102,24 @@ header{
    color: var(--main-modal-color)
 }
 
-.nav-links a::before{
+.nav-links a::before,
+#contact .email::before{
    content: '';
    display: block;
    height: 2px;
    background-color: var(--main-modal-color);
    position: absolute;
-   bottom: 0;
+   bottom: -15%;
    left: 0;
    right: 0;
-   transform: scale(0,1);
+   transform: scale(0,4);
    transform-origin: center;
    transition: transform ease-in-out 0.3s;
 
 }
 
-.nav-links a:hover::before{
+.nav-links a:hover::before,
+#contact .email:hover::before{
    transform: scale(1,1)
 }
 
@@ -156,20 +165,30 @@ button:hover{
    /* padding-left: 3rem; */
 }
 
-#welcome-section span{
-   /* font-family: 'Passion one', cursive; */
-   color: var(--main-modal-color)
+.name{
+   font-family: var(--second-font);
+   font-weight: 700;
+   background-image: 
+   linear-gradient(90deg, var(--main-color), var(--main-modal-color));
+   -webkit-background-clip: text;
+   background-clip: text;
+   color: transparent;
 }
+
 
 #welcome-section h1{
    font-size: 5vw;
    margin: 0;
    margin-bottom: .75rem;
+   font-weight: 400;
+
 }
 #welcome-section h2{
    font-size: 3vw;
    margin: 0;
    margin-bottom: .75rem;
+   font-weight: 300;
+
 }
 
 .welcome-content a{
@@ -178,6 +197,8 @@ button:hover{
 
 #welcome-section .image {
    flex: 2 1 500px;
+   align-self: flex-start;
+   margin-top: 3rem;
 }
 
 #welcome-section .image img {
@@ -199,28 +220,33 @@ button:hover{
 
 /*? Projects section */
 
-#projects{
-   margin-bottom: 2.5rem;
+#projects,
+.skills{
+   margin-bottom: 4rem;
 }
 
-#projects h2{
+#projects h2,
+.skills h2,
+#contact h2{
    text-align: center;
-   margin-bottom: 2.5rem;
+   margin-bottom: 2rem;
 }
 
 #project-cards{
    display:flex;
    justify-content: center;
+   flex-wrap: wrap;
    gap: 20px;
 
+
 }
 
 
 
-.project-card:nth-child(2),
+/* .project-card:nth-child(2),
 .project-card:nth-child(3){
    visibility: hidden;
-}
+} */
 
 
 
@@ -228,14 +254,16 @@ button:hover{
    position: relative;
    flex-basis: 25vw;
    height: 35vw;
-   background-color: rgb(204, 160, 105);
+   background-color: rgba(42, 207, 207, 0.1);
    border-radius: 10px;
+   box-shadow: 0 0 3px 5px rgba(14, 28, 56, 0.1);
 }
 
 .prject-card__img{
    width: 100%;
    height: 80%;
-   border-radius: 10px;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
    
 }
 
@@ -245,34 +273,145 @@ button:hover{
    height: 100%;
 }
 
-.project-card__code-btn{
+.project-card__btn{
    position: absolute;
    display: block;
    bottom: 5%;
-   left: 10%;
+   /* left: 10%; */
    min-width: 20%;
    height: auto;  
+   text-align: center;
+   padding: .2rem .4rem;
+   border-radius: 5px;
+   background-color: var(--main-modal-color);
+   transition: all 0.3s ease-in-out;
+   border: 2px solid transparent;
+
 }
 
-.project-card__live-btn{
-   position: absolute;
-   display: block;
-   bottom: 5%;
-   right: 10%;
-   min-width: 20%;
+.project-card__btn:hover{
+   background-color: white;
+   color: var(--main-modal-color);
+   border: 2px solid var(--main-modal-color);
+
+}
+
+
+.project-card__btn--left{
+   left: 15%;
+}
+
+.project-card__btn--right{
+   right: 15%;
+}
+
+
+
+
+
+/*? Projects section */
+.skills section{
+   display: flex;
+   justify-content: space-evenly;
+   max-width: 90%;
+   margin: 0 auto;
+}
+
+.skills__item{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 15px;
+   flex-basis: 200px;
+}
+
+.skills__item img{
+   width: 40%
+}
+
+.skills__item:last-child img{
+   width: 100%;
+}
+
+.skills__item span{
+   font-weight: 500;
+}
+
+
+
+
+#contact{
+ display: flex;  
+ flex-direction: column;
+}
+
+#contact p{
+   text-align: center;
+   margin-bottom: 1rem;
+}
+
+.contact-icons{
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+   /* max-width: 50%; */
+
+}
+
+.contact-icons a{
+   position: relative;
+   width: 30px;
    height: auto;
+   cursor: pointer;
+   transition: all .3s ease-in-out;
+   color: black;
+   /* padding: 0 .5rem; */
+}
+
+.contact-icons a i{
+   position: absolute;
+   font-size: 1rem;
+}
+
+.contact-icons a:hover{
+   transform: rotate(-20deg) scale(1.3);
 }
 
 
+#contact > a{
+   color: black;
+   text-decoration: none;
+   /* display: block; */
+   
+   text-align: center;
+   /* padding: 1rem 0; */
+   margin: 2rem auto 1rem auto;
+}
+
+/* #contact a:hover{
+
+} */
 
 
+/* .nav-links a::before{
+   content: '';
+   display: block;
+   height: 2px;
+   background-color: var(--main-modal-color);
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   transform: scale(0,1);
+   transform-origin: center;
+   transition: transform ease-in-out 0.3s;
 
+}
 
-
-
-
-
-
+.nav-links a:hover::before{
+   transform: scale(1,1)
+} */
 
 @media screen and (max-width: 550px){
 
