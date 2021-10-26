@@ -722,6 +722,7 @@ header{
    }
 
    .mobile-menu a{
+     font-family: var(--main-font);
      text-align: center;
      padding: .5rem 0;
      border-top: solid 1px var(--main-color);
