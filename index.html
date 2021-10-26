@@ -5,8 +5,9 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Julian Florez - Frontend dev</title>
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+   <link href="hamburgers.css" rel="stylesheet">
    <link rel="icon" href="assets/JF_logo(1).png">
 </head>
 <body>
@@ -26,7 +27,7 @@
 
 <section id="welcome-section">
    <div class="welcome-content">
-      <h1>Hello, my name is <br><span class="name">Julian Florez</span>.</h1>
+      <h1>Hello, my name is <br><span class="name">Julian Florez</span></h1>
       <h2>A frontend developer and I'm focused on creating unique, and AmAzInG experiences that help boost your business' growth</h2>
       <a class="cta" href="#contact">Contact me</a>
    </div>
@@ -68,8 +69,7 @@
 </section>
 
 <section id="skills" class="skills">
-   <h2>Skills</h2>
-   
+   <h2>Skills</h2>   
    <section>
 
       <div class="skills__item"><img src="assets/HTML_logo.png" alt="HTML logo"><span>HTML</span></div>
@@ -92,6 +92,20 @@
    <a class ="email" href="mailto:forezjuli08@hotmail.com">forezjuli08@hotmail.com</a>
 </section>
 
+<nav id="mobile-menu" class="mobile-menu">
+   <a href="#welcome-section">Home</a>
+   <a href="#projects">Projects</a>
+   <a href="#skills">Skills</a>
+   <a href="#contact">Contact</a>
+</nav>
+
+<button id="hamburger-btn" class="hamburger hamburger--elastic" type="button">
+   <span class="hamburger-box">
+     <span class="hamburger-inner"></span>
+   </span>
+ </button> 
+
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
